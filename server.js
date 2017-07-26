@@ -2,6 +2,8 @@ const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
 
+const port = process.env.PORT || 3000;
+
 // Make a new request app
 var app = express();
 // using partials ; partials contains a partial piece of the website
@@ -103,7 +105,7 @@ app.get('/bad',(req,res)=>{
 
 // we now need to set the app to listed by binding the app to a port to listen
 // 2nd parameter is optional and is a function. Functions happen when server is up
-app.listen(3000,()=>{
-    console.log('Server is up and running');
+app.listen(port,() => {
+    console.log(`Listening on ${port}`);
 });
 
