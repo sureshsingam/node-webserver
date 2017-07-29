@@ -96,6 +96,15 @@ app.get('/about',(req,res) =>{
     })
 });
 
+// handling a new route to projects
+app.get('/projects',(req,res) =>{
+    res.render('projects.hbs',{
+        pageTitle: 'Projects Page',
+        // currentYear:new Date().getFullYear() -- This is not needed as we now have the helper function getCurrentYear
+    })
+});
+
+
 //test another route but sending bad data
 app.get('/bad',(req,res)=>{
     res.send({
